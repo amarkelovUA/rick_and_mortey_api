@@ -18,6 +18,7 @@ public class MovieCharacter {
             sequenceName = "movie_character_id_seq",
             allocationSize = 1)
     private Long id;
+    private Long externalId;
     private String name;
     @Enumerated(EnumType.STRING)
     private Status status;
@@ -30,6 +31,14 @@ public class MovieCharacter {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public Long getExternalId() {
+        return externalId;
+    }
+
+    public void setExternalId(Long externalId) {
+        this.externalId = externalId;
     }
 
     public String getName() {
