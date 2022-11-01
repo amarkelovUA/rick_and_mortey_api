@@ -13,13 +13,14 @@ import org.springframework.stereotype.Component;
 public class HttpClient {
     private final CloseableHttpClient httpClient = HttpClients.createDefault();
     private final ObjectMapper objectMapper = new ObjectMapper();
+
     {
         objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
     }
 
-    public <T> T get(String url, Class<T> tClass) {
+    public <T> T get(String url, Class<T> clazz) {
         try (CloseableHttpResponse response = httpClient.execute(new HttpGet(url))) {
-            return objectMapper.readValue(response.getEntity().getContent(), tClass);
+            return objectMapper.readValue(response.getEntity().getContent(), clazz);
         } catch (IOException e) {
             throw new RuntimeException("Can't get info from url: " + url, e);
         }

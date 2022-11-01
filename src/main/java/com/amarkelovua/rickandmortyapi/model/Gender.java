@@ -6,9 +6,13 @@ public enum Gender {
     GENDERLESS("Genderless"),
     UNKNOWN("unknown");
 
-    private String value;
+    private final String description;
 
-    Gender(String value) {
-        this.value = value;
+    Gender(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

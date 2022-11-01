@@ -5,9 +5,13 @@ public enum Status {
     DEAD("Dead"),
     UNKNOWN("unknown");
 
-    private String value;
+    private String description;
 
-    Status(String value) {
-        this.value = value;
+    Status(String description) {
+        this.description = description;
+    }
+
+    public String getDescription() {
+        return description;
     }
 }

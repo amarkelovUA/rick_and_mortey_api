@@ -6,16 +6,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/demo")
-public class DemoController {
+@RequestMapping("/external_upload")
+public class UploadController {
     private final MovieCharacterService characterService;
 
-    public DemoController(MovieCharacterService characterService) {
+    public UploadController(MovieCharacterService characterService) {
         this.characterService = characterService;
     }
 
     @GetMapping
-    public String getAll() {
+    public String loadAll() {
         characterService.syncExternalCharacters();
         return "Done!";
     }

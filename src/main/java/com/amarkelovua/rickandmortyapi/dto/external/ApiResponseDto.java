@@ -1,4 +1,4 @@
-package com.amarkelovua.rickandmortyapi.dto;
+package com.amarkelovua.rickandmortyapi.dto.external;
 
 import lombok.Data;
 
