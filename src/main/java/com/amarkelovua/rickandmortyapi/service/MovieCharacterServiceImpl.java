@@ -63,12 +63,10 @@ public class MovieCharacterServiceImpl implements MovieCharacterService {
     private void saveDtosToDb(ApiResponseDto apiResponseDto) {
         Map<Long, ApiCharacterDto> externalDtos = Arrays.stream(apiResponseDto.getResults())
                 .collect(Collectors.toMap(ApiCharacterDto::getId, Function.identity()));
-
         Set<Long> externalIds = externalDtos.keySet();
 
         List<MovieCharacter> existingCharacters = movieCharacterRepository
                 .findAllByExternalIdIn(externalIds);
-
         Map<Long, MovieCharacter> existingCharactersWithIds = existingCharacters.stream()
                 .collect(Collectors.toMap(MovieCharacter::getExternalId, Function.identity()));
         Set<Long> existingIds = existingCharactersWithIds.keySet();
