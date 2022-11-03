@@ -28,14 +28,14 @@ public class MovieCharacterController {
 
     @GetMapping("/random")
     @ApiOperation(value = "get random movie character")
-    MovieCharacterResponseDto getRandomCharacter() {
+    public MovieCharacterResponseDto getRandomCharacter() {
         return movieCharacterResponseDtoMapper
                 .mapToDto(movieCharacterService.getRandomMovieCharacter());
     }
 
     @GetMapping("/by-name")
     @ApiOperation(value = "get all movie characters whose name contains input string")
-    List<MovieCharacterResponseDto> getAllByName(@RequestParam String namePart) {
+    public List<MovieCharacterResponseDto> getAllByName(@RequestParam String namePart) {
         return movieCharacterService.findAllByNameContains(namePart).stream()
                 .map(movieCharacterResponseDtoMapper::mapToDto)
                 .collect(Collectors.toList());

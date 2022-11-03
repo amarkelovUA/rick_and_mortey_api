@@ -5,7 +5,6 @@ import com.amarkelovua.rickandmortyapi.dto.external.ApiResponseDto;
 import com.amarkelovua.rickandmortyapi.dto.mapper.ExternalResponseDtoMapper;
 import com.amarkelovua.rickandmortyapi.model.MovieCharacter;
 import com.amarkelovua.rickandmortyapi.repository.MovieCharacterRepository;
-import com.amarkelovua.rickandmortyapi.util.HttpClient;
 import java.time.LocalDateTime;
 import java.util.Arrays;
 import java.util.List;
